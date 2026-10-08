@@ -1,0 +1,176 @@
+/* Fælles farver, afstande og typografi */
+:root {
+    --color-ink: #153c4c;
+    --color-muted: #506570;
+    --color-accent: #236477;
+    --color-white: #ffffff;
+    --color-soft: #f2f7f9;
+    --color-blue: #e5f0f4;
+    --color-border: #d7e2e7;
+    --space-small: 1rem;
+    --space-medium: 1.5rem;
+    --space-large: 3rem;
+    --section-space: 4rem;
+    --radius: 8px;
+    --content-width: 1160px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body {
+    margin: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 5px; }
+a:hover { color: var(--color-accent); }
+button, input, select, textarea { font: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { line-height: 1.15; }
+h1 { margin-bottom: 1.5rem; font-size: clamp(2.7rem, 6vw, 5.5rem); letter-spacing: -0.055em; }
+h2 { margin-bottom: 1rem; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -0.035em; }
+h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
+p { color: var(--color-muted); }
+address { font-style: normal; }
+:focus-visible { outline: 3px solid #267caa; outline-offset: 5px; }
+.container { width: min(calc(100% - 2.5rem), var(--content-width)); margin-inline: auto; }
+.section-spacing { padding-block: var(--section-space); }
+.eyebrow { margin-bottom: 1rem; color: var(--color-accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.13em; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; padding: 0.75rem 1rem; background: var(--color-white); }
+.skip-link:focus { top: 1rem; }
+
+/* Header og navigation */
+.site-header { padding-block: 1.3rem; border-bottom: 1px solid var(--color-border); }
+.header-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.brand { display: flex; align-items: center; gap: 0.7rem; color: var(--color-ink); font-size: 1.35rem; font-weight: 700; line-height: 1.3; text-decoration: none; }
+.brand-symbol { font-size: 2.6rem; color: var(--color-accent); }
+.brand small { display: block; margin-top: 4px; font-size: 0.55rem; letter-spacing: 0.13em; }
+.main-navigation { display: flex; flex-basis: 100%; justify-content: center; gap: 2rem; }
+.main-navigation a { padding-block: 0.35rem; border-bottom: 2px solid transparent; font-size: 0.9rem; text-decoration: none; }
+.main-navigation a:hover, .main-navigation .is-current { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.main-navigation .is-current { font-weight: 700; }
+.header-contact { display: none !important; }
+
+/* Knapper og tekstlinks */
+.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 1.5rem; padding: 0.85rem 1.35rem; border: 1px solid var(--color-ink); border-radius: var(--radius); color: var(--color-white); background: var(--color-ink); font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color 150ms ease; }
+.button:hover { color: var(--color-white); background: var(--color-accent); }
+.button-small { padding: 0.65rem 1.1rem; }
+.text-link { display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.9rem; font-weight: 700; }
+
+/* Forsidens hero */
+.hero { padding-block: 3rem; background: linear-gradient(110deg, var(--color-soft), var(--color-white)); }
+.hero-layout { display: grid; gap: 2.5rem; align-items: center; }
+.hero-content .eyebrow { display: flex; align-items: center; gap: 0.5rem; }
+.status-dot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent); }
+.hero-company { margin-bottom: 0.65rem; color: var(--color-ink); font-weight: 700; }
+h1 span { color: var(--color-accent); }
+.hero-description { max-width: 460px; font-size: 1.05rem; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 1.8rem; }
+.hero-note { margin-top: 1.5rem; margin-bottom: 0; font-size: 0.8rem; }
+.hero-visual { position: relative; padding-bottom: 1.5rem; }
+.hero-visual > img { width: 100%; aspect-ratio: 6 / 5; object-fit: cover; border-radius: var(--radius); }
+.image-caption { position: absolute; bottom: 0; left: 1rem; right: 1rem; display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-white); }
+.caption-symbol { font-size: 2rem; color: var(--color-accent); }
+.image-caption strong, .image-caption div span { display: block; }
+.image-caption div span { color: var(--color-muted); font-size: 0.8rem; }
+
+/* Fordele og servicekort */
+.benefits { border-block: 1px solid var(--color-border); }
+.benefits-grid { display: grid; gap: 1.8rem; padding-block: 2rem; }
+.benefit { display: flex; gap: 1rem; align-items: flex-start; }
+.benefit-number { padding-top: 0.15rem; color: var(--color-accent); font-size: 0.8rem; }
+.benefit h2 { margin-bottom: 0.4rem; font-size: 1rem; letter-spacing: 0; }
+.benefit p { margin-bottom: 0; font-size: 0.85rem; }
+.section-heading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.section-heading h2 { max-width: 500px; margin-bottom: 0; }
+.section-heading > a { flex-shrink: 0; }
+.service-grid { display: grid; gap: 1.5rem; }
+.service-card { overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius); }
+.service-image-link { display: block; }
+.service-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.service-card-content { padding: 1.5rem; }
+.service-card .eyebrow { display: block; font-size: 0.6rem; }
+.service-card h3 { margin-bottom: 0.8rem; }
+.service-card p { font-size: 0.9rem; }
+.about-section { background: var(--color-soft); }
+.about-layout { display: grid; align-items: center; gap: 2rem; }
+.about-layout img { width: 100%; border-radius: var(--radius); }
+
+/* Servicesiden og kontaktopfordring */
+.page-intro { padding-block: var(--section-space); background: var(--color-soft); border-bottom: 1px solid var(--color-border); }
+.page-intro h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); }
+.page-intro p:last-child { max-width: 590px; margin-bottom: 0; }
+.service-details { display: grid; gap: 3rem; }
+.service-detail { display: grid; gap: 2rem; align-items: center; scroll-margin-top: 2rem; }
+.service-detail + .service-detail { padding-top: 3rem; border-top: 1px solid var(--color-border); }
+.service-detail img { width: 100%; border-radius: var(--radius); }
+.check-list { padding-left: 1.3rem; margin-block: 1.5rem; color: var(--color-muted); }
+.check-list li { padding-left: 0.3rem; margin-bottom: 0.6rem; }
+.check-list li::marker { color: var(--color-accent); }
+.cta-section, .quote-help { padding-block: var(--section-space); background: var(--color-blue); }
+.cta-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.cta-layout h2 { max-width: 600px; }
+.cta-layout p:last-child { margin-bottom: 0; }
+
+/* Kontaktoplysninger og formular */
+.contact-layout { display: grid; align-items: start; gap: 2.5rem; }
+.contact-item { margin-top: 1.7rem; }
+.contact-item h3 { margin-bottom: 0.4rem; font-size: 0.9rem; }
+.contact-item p { margin-bottom: 0; }
+.contact-item a { overflow-wrap: anywhere; }
+.contact-highlight { font-size: 1.65rem; font-weight: 700; }
+.form-panel { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-soft); }
+.form-panel h2 { font-size: 1.8rem; }
+.form-notice, .form-caption { font-size: 0.8rem; }
+.contact-form, .form-field, .form-row { display: grid; gap: 1.25rem; }
+.form-field { gap: 0.4rem; min-width: 0; }
+.form-field label { font-size: 0.85rem; font-weight: 700; }
+.form-field label span { color: var(--color-muted); font-size: 0.75rem; font-weight: 400; }
+input, select, textarea { width: 100%; min-width: 0; min-height: 48px; padding: 0.7rem 0.85rem; border: 1px solid #a5b9c3; border-radius: 5px; color: var(--color-ink); background: var(--color-white); }
+input::placeholder, textarea::placeholder { color: #61727a; opacity: 1; }
+textarea { resize: vertical; }
+.button:disabled { color: var(--color-white); background: #526973; border-color: #526973; cursor: not-allowed; }
+.form-caption { margin-bottom: 0; }
+.quote-help-layout { display: grid; gap: 1rem; align-items: center; }
+.quote-help-layout p:last-child { margin-bottom: 0; }
+
+/* Footer */
+.site-footer { padding-top: 3rem; color: var(--color-white); background: var(--color-ink); }
+.footer-layout { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; padding-bottom: 2.5rem; }
+.footer-brand, .site-footer p { color: var(--color-white); }
+.site-footer p { margin-top: 0.6rem; margin-bottom: 0; font-size: 0.85rem; }
+.site-footer address, .footer-navigation { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; }
+.site-footer a:hover { color: #b5dfef; }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding-block: 1.2rem; border-top: 1px solid #43616e; color: #c9d9e0; }
+.footer-bottom small { font-size: 0.7rem; }
+
+/* Tablet: flere kolonner og samlet navigation */
+@media (min-width: 640px) {
+    .main-navigation { flex-basis: auto; }
+    .benefits-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .form-panel { padding: 2rem; }
+    .form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Desktop: rummelige layouts med to eller tre kolonner */
+@media (min-width: 960px) {
+    :root { --section-space: 5rem; }
+    .header-contact { display: inline-flex !important; }
+    .hero { padding-block: 4rem; }
+    .hero-layout { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+    .hero-visual { padding-bottom: 1.7rem; }
+    .image-caption { left: -1.5rem; right: auto; min-width: 280px; }
+    .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .about-layout, .service-detail { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .contact-layout { grid-template-columns: 0.8fr 1.2fr; gap: 5rem; }
+    .quote-help-layout { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button { transition: none; }
+}
